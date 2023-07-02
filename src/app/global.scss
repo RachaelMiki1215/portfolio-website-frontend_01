@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&family=Major+Mono+Display&display=swap');
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgb(47, 47, 47);
+}
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: gray;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 10px;
+    background: linear-gradient(#1f1f1f, #1f1f1f 50%, #002f41);
+    background-attachment: fixed;
+    font-size: 18px;
+    font-family: 'Jetbrains Mono', monospace;
+}
+
+h1, h2, h3, h4, h5, h6, p::first-letter {
+    font-family: 'Major Mono Display', monospace;
+}
+
+p::first-letter {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}

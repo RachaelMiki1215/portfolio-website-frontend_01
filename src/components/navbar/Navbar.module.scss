@@ -1,0 +1,56 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-end;
+  text-align: right;
+  width: 200px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.dropdown {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.subnavbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  text-align: right;
+  width: 100%;
+}
+
+.navlink,
+.subnavlink {
+  color: inherit;
+  text-decoration: none;
+  width: min-content;
+  white-space: nowrap;
+  letter-spacing: -0.2rem;
+  opacity: 0.5;
+  transition: opacity 500ms ease, letter-spacing 500ms ease;
+
+  &:hover,
+  &:active,
+  &.activeLink {
+    opacity: 1;
+    letter-spacing: 0;
+  }
+}
+
+.navlink {
+  font-size: 1.8rem;
+}
+
+.subnavlink {
+  font-size: 1.1rem;
+}

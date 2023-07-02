@@ -1,0 +1,13 @@
+.siteLogo {
+    width: 61px;
+    height: 61px;
+    fill: whitesmoke;
+    opacity: 0.5;
+    transform-origin: top left;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+    &:hover {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
