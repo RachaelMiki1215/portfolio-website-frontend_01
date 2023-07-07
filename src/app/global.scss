@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;600&family=Major+Mono+Display&display=swap');
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -28,6 +28,7 @@ body {
     background-attachment: fixed;
     font-size: 18px;
     font-family: 'Jetbrains Mono', monospace;
+    font-weight: 100;
 }
 
 h1, h2, h3, h4, h5, h6, p::first-letter {
@@ -37,4 +38,10 @@ h1, h2, h3, h4, h5, h6, p::first-letter {
 p::first-letter {
     font-size: 2.5rem;
     text-transform: uppercase;
+}
+
+strong {
+    text-decoration: whitesmoke wavy underline;
+    font-family: 'Jetbrains Mono', monospace;
+    font-weight: 600;
 }
