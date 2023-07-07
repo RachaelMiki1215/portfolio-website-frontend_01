@@ -1,5 +1,3 @@
-"use client";
-
 import MyHeader from "@/components/header/Header";
 import Navbar from "@/components/navbar/Navbar";
 
