@@ -1,0 +1,88 @@
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: block;
+}
+
+.pageContainer {
+    position: absolute;
+    z-index: auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+}
+
+.navigatorContainer {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    min-height: 20px;
+    max-height: 50px;
+    background: linear-gradient(tranparent, black);
+    backdrop-filter: blur(10px);
+    opacity: 0.6;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.navBtn {
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background: whitesmoke;
+    border-radius: 50%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+.prevBtn, .nextBtn {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translateX(-50%);
+    background: whitesmoke;
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.1;
+    }
+}
+.prevBtn {
+    left: 5px;
+}
+.nextBtn {
+    right: 5px;
+}
