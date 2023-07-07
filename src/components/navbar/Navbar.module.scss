@@ -31,7 +31,7 @@
 
 .navlink,
 .subnavlink {
-  color: inherit;
+  color: whitesmoke;
   text-decoration: none;
   width: min-content;
   white-space: nowrap;
@@ -42,6 +42,7 @@
   &:hover,
   &:active,
   &.activeLink {
+    color: whitesmoke;
     opacity: 1;
     letter-spacing: 0;
   }
