@@ -5,6 +5,7 @@ import {
   faGithub,
   faCodepen,
   faTwitter,
+  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,6 +44,12 @@ const socials = [
     url: "https://twitter.com/RachaelMiki1215",
     icon: <FontAwesomeIcon icon={faTwitter} />,
     isInternal: false,
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/mikimonmon1215/",
+    icon: <FontAwesomeIcon icon={faInstagram} />,
+    isInternal: true,
   },
   {
     name: "Email",
