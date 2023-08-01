@@ -1,21 +1,17 @@
 "use client";
 
 import Styles from "./Carousel.module.scss";
+import { CarouselProps } from "./ContainerTypes";
 
 import { useEffect, useState } from "react";
 import React from "react";
 
-export default function Carousel({
+const Carousel: React.FC<CarouselProps> = ({
   containerClassName,
   pageContainerClassName,
   navigatorClassName,
   children,
-}: {
-  containerClassName?: string;
-  pageContainerClassName?: string;
-  navigatorClassName?: string;
-  children: React.ReactNode;
-}) {
+}) => {
   const [currSlide, setCurrSlide] = useState<number>(0);
   const [slideCount, setSlideCount] = useState<number>(0);
 
@@ -78,4 +74,6 @@ export default function Carousel({
       </button>
     </div>
   );
-}
+};
+
+export default Carousel;

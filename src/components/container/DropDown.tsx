@@ -1,17 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Styles from "./DropDown.module.scss";
+import { SlidingDropDownProps } from "./ContainerTypes";
 
-export default function SlidingDropDown({
+const SlidingDropDown: React.FC<SlidingDropDownProps> = ({
   headerComponent,
   dropdownComponent,
   isOpenOnDefault = false,
   changeOnClick = false,
-}: {
-  headerComponent: React.ReactNode;
-  dropdownComponent: React.ReactNode;
-  isOpenOnDefault?: boolean;
-  changeOnClick?: boolean;
-}) {
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(isOpenOnDefault);
   const [height, setHeight] = useState<string>();
   const dropdownContainerRef = useRef<HTMLDivElement>(null);
@@ -36,9 +32,7 @@ export default function SlidingDropDown({
   }, []);
 
   return (
-    <div
-      className={Styles.container}
-    >
+    <div className={Styles.container}>
       <div
         className={Styles.header}
         onClick={changeOnClick ? changeOpenState : () => {}}
@@ -54,4 +48,6 @@ export default function SlidingDropDown({
       </div>
     </div>
   );
-}
+};
+
+export default SlidingDropDown;
