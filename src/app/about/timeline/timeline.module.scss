@@ -1,0 +1,32 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.timelineContainer {
+  height: 1500px;
+}
+
+.eventTitle,
+.eventSubtitle,
+.period {
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.eventTitle {
+  font-size: 1.2rem;
+}
+.eventSubtitle {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+.period {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.responsibilities,
+.educationDescription {
+  font-size: 0.95rem;
+  margin: 20px 0;
+}
