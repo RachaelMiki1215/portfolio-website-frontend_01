@@ -28,14 +28,6 @@ const sections: section[] = [
         href: "/about/timeline",
       },
       {
-        label: "Skills",
-        href: "/about/skills",
-      },
-      {
-        label: "Bucket List",
-        href: "/about/bucketlist",
-      },
-      {
         label: "Resume",
         href: "/about/resume",
       },
@@ -67,9 +59,7 @@ const sections: section[] = [
 
 export default function Navbar({ className }: { className?: string }) {
   return (
-    <nav
-      className={`${majorMonoDisplayClass} ${Styles.navbar} ${className}`}
-    >
+    <nav className={`${majorMonoDisplayClass} ${Styles.navbar} ${className}`}>
       {sections.map((section) => {
         return <NavSection section={section} key={Math.random().toString()} />;
       })}
