@@ -5,8 +5,9 @@ import "./global.scss";
 import GlobalStyle from "./global.module.scss";
 import SocialsBar from "@/components/socials/SocialsBar";
 import { Metadata } from "next";
+import Content from "@/components/container/Content";
 
-export const metadata : Metadata = {
+export const metadata: Metadata = {
   title: "Rachael Miki Buxton | Portfolio Website",
   description: "This website showcases projects done by Rachael Miki Buxton.",
 };
@@ -22,7 +23,7 @@ export default function RootLayout({
         <MyHeader className={GlobalStyle.header} />
         <Navbar className={GlobalStyle.navbar} />
         <SocialsBar className={GlobalStyle.socialsbar} />
-        <div className={GlobalStyle.content}>{children}</div>
+        <Content>{children}</Content>
         {/* TODO: Wait for using Framer Motion AnimatePresence until this issue (https://github.com/vercel/next.js/issues/49279#issuecomment-1541939624) is fixed */}
         {/* <AnimatePresence
           mode="wait"
