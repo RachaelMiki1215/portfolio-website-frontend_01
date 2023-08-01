@@ -59,7 +59,11 @@ const socials = [
   },
 ];
 
-export default function SocialsBar({ className }: { className?: string }) {
+interface SocialsBarProps {
+  className?: string;
+}
+
+const SocialsBar: React.FC<SocialsBarProps> = ({ className }) => {
   return (
     <ul className={`${Styles.socialsList} ${className}`}>
       {socials.map((social) => {
@@ -79,4 +83,6 @@ export default function SocialsBar({ className }: { className?: string }) {
       })}
     </ul>
   );
-}
+};
+
+export default SocialsBar;
