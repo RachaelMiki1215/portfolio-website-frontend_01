@@ -1,0 +1,49 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  min-height: 500px;
+  gap: 10px;
+}
+
+.nameSection,
+.educationSection,
+.certificationSection,
+.hobbySection,
+.projectSection,
+.workExperienceSection,
+.skillSection {
+  h1 {
+    font-size: 1.15rem;
+  }
+}
+
+.nameSection {
+  grid-column: 1;
+  grid-row: 1;
+}
+.educationSection {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+}
+.certificationSection {
+  grid-column: 1;
+  grid-row: 4;
+}
+.hobbySection {
+  grid-column: 1;
+  grid-row: 5;
+}
+.projectSection {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+.workExperienceSection {
+  grid-column: 2;
+  grid-row: 4 / span 2;
+}
+.skillSection {
+  grid-column: 3;
+  grid-row: 1 / -1;
+}
