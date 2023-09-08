@@ -1,4 +1,6 @@
-const getWorkExperience = async () => {
+import { CertificationType, EducationType, HobbyType, SkillType, WorkExperienceType } from "@/types/MyDbTypes";
+
+const getWorkExperience = async (): Promise<WorkExperienceType[]> => {
     const res = await fetch(
       "https://raebux-portfolio-website-web-api.azurewebsites.net/workexperience",
       { cache: "force-cache" }
@@ -9,7 +11,7 @@ const getWorkExperience = async () => {
     return null;
   };
   
-  const getEducation = async () => {
+  const getEducation = async (): Promise<EducationType[]> => {
     const res = await fetch(
       "https://raebux-portfolio-website-web-api.azurewebsites.net/education",
       { cache: "force-cache" }
@@ -20,7 +22,7 @@ const getWorkExperience = async () => {
     return null;
   };
   
-  const getCertifications = async () => {
+  const getCertifications = async (): Promise<CertificationType[]> => {
     const res = await fetch(
       "https://raebux-portfolio-website-web-api.azurewebsites.net/certification",
       { cache: "force-cache" }
@@ -31,7 +33,7 @@ const getWorkExperience = async () => {
     return null;
   };
   
-  const getHobbies = async () => {
+  const getHobbies = async (): Promise<HobbyType[]> => {
     const res = await fetch(
       "https://raebux-portfolio-website-web-api.azurewebsites.net/hobby",
       { cache: "force-cache" }
@@ -42,7 +44,7 @@ const getWorkExperience = async () => {
     return null;
   };
   
-  const getSkills = async () => {
+  const getSkills = async (): Promise<SkillType[]> => {
     const res = await fetch(
       "https://raebux-portfolio-website-web-api.azurewebsites.net/skill",
       { cache: "force-cache" }

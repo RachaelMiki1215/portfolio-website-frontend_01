@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import Styles from "./DropDown.module.scss";
 import { SlidingDropDownProps } from "./ContainerTypes";

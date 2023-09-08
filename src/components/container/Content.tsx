@@ -27,9 +27,9 @@ const Content: React.FC<{ children?: React.ReactNode }> = ({
         parseInt(getComputedStyle(itemRef.current)["paddingTop"], 10) -
         parseInt(getComputedStyle(itemRef.current)["paddingBottom"], 10),
     });
-
-    // console.log(contentAreaSize);
   };
+
+  useEffect(handleResize, []);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);

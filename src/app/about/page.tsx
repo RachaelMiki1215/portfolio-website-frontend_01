@@ -1,10 +1,6 @@
-import Image from "next/image";
-
 import Styles from "./about.module.scss";
 
-import profileImg01 from "@/../public/img/RachaelBuxton_ProfilePic_01.png";
-import profileImg02 from "@/../public/img/RachaelBuxton_ProfilePic_02.jpg";
-import profileImg03 from "@/../public/img/RachaelBuxton_ProfilePic_03.jpg";
+import { profilePicArr } from "@/other/ProfilePic";
 import { Metadata } from "next";
 import TimeBasedGreeting from "@/components/strings/greetings";
 import { InlineLink } from "@/components/inline-elements/Links";
@@ -12,46 +8,19 @@ import Carousel from "@/components/container/Carousel";
 import CaptionPopupImage from "@/components/images/CaptionPopupImage";
 import { getHobbies } from "@/data/FetchFromMyDb";
 
+// TODO: Eventually, optimize this by first choosing random item out of array and then forming component
+const profPicArr: React.ReactNode[] = profilePicArr.map((prof) => (
+  <CaptionPopupImage
+    src={prof.image}
+    caption={prof.caption}
+    imgClassName={Styles.profileImg}
+    imgStyle={prof.style}
+  />
+));
+
 type Hobby = {
   name: string;
   description: string;
-};
-
-const imageArr: { image: React.ReactNode }[] = [
-  {
-    image: (
-      <CaptionPopupImage
-        src={profileImg01}
-        caption="My latest portrait on LinkedIn"
-        imgClassName={Styles.profileImg}
-      />
-    ),
-  },
-  {
-    image: (
-      <CaptionPopupImage
-        src={profileImg02}
-        caption="A random side profile"
-        imgClassName={Styles.profileImg}
-        imgStyle={{ filter: "contrast(1.2)" }}
-      />
-    ),
-  },
-  {
-    image: (
-      <CaptionPopupImage
-        src={profileImg03}
-        caption="Spoiling my sugar-deprived self"
-        imgClassName={Styles.profileImg}
-        imgStyle={{ filter: "contrast(1.3)" }}
-      />
-    ),
-  },
-];
-
-export const metadata: Metadata = {
-  title: "Rachael Miki Buxton | Portfolio Website | About Author",
-  description: "A quick summary about the author/owner of this website.",
 };
 
 const HobbySection = ({ hobbies }: { hobbies: any }) => {
@@ -71,6 +40,11 @@ const HobbySection = ({ hobbies }: { hobbies: any }) => {
       </dd>
     </>
   );
+};
+
+export const metadata: Metadata = {
+  title: "Rachael Miki Buxton | Portfolio Website | About Author",
+  description: "A quick summary about the author/owner of this website.",
 };
 
 export default async function About() {
@@ -118,7 +92,7 @@ export default async function About() {
         </div>
       </Carousel>
       <div className={Styles.imgDiv}>
-        {imageArr[Math.floor(Math.random() * imageArr.length)].image}
+        {profPicArr[Math.floor(Math.random() * profPicArr.length)]}
       </div>
     </main>
   );

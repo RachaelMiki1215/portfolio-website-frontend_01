@@ -1,49 +1,121 @@
 .main {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   width: 100%;
-  min-height: 500px;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.leftColumn {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
   gap: 10px;
 }
 
-.nameSection,
+.middleColumn {
+  grid-column: 2;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .educationSection,
 .certificationSection,
 .hobbySection,
 .projectSection,
 .workExperienceSection,
 .skillSection {
+  position: relative;
+  flex: 1;
+
   h1 {
     font-size: 1.15rem;
   }
 }
 
 .nameSection {
-  grid-column: 1;
-  grid-row: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  height: fit-content;
+
+  .profilePic {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .name {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    transition: opacity 0.5s ease;
+  }
+
+  &:hover > .profilePic {
+    opacity: 1;
+  }
+  &:hover > .name {
+    opacity: 0;
+  }
 }
 .educationSection {
-  grid-column: 1;
-  grid-row: 2 / span 2;
+  .educationItem {
+    margin-top: 15px;
+
+    .degreeMajor {
+      margin-bottom: 5px;
+    }
+
+    .institute,
+    .location {
+      font-size: 0.8rem;
+      display: flex;
+      margin: 0.2rem;
+      flex-direction: row;
+      gap: 2px;
+    }
+  }
 }
 .certificationSection {
-  grid-column: 1;
-  grid-row: 4;
 }
 .hobbySection {
-  grid-column: 1;
-  grid-row: 5;
+  .hobbyList {
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
 }
 .projectSection {
-  grid-column: 2;
-  grid-row: 1 / span 3;
 }
 .workExperienceSection {
-  grid-column: 2;
-  grid-row: 4 / span 2;
 }
 .skillSection {
   grid-column: 3;
-  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .skillCategoryHeader {
+    background: rgba($color: whitesmoke, $alpha: 0.1);
+    user-select: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
 }
