@@ -8,8 +8,10 @@ export interface CarouselProps {
 export interface SlidingDropDownProps {
     headerComponent: React.ReactNode;
     dropdownComponent: React.ReactNode;
+    dropdownStyle?: React.CSSProperties;
     isOpenOnDefault?: boolean;
     changeOnClick?: boolean;
+    openOnHover?: boolean;
 }
 
 export interface ContainerProps {

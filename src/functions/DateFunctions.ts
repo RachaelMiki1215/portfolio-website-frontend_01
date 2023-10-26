@@ -1,6 +1,7 @@
-function formatDate(myDate: Date): string;
-function formatDate(myDate: number): string;
-function formatDate(myDate: Date | number): string {
+function formatDateMonthYear(myDate: Date): string;
+function formatDateMonthYear(myDate: number): string;
+function formatDateMonthYear(myDate: string): string;
+function formatDateMonthYear(myDate: Date | number | string): string {
     const monthStringArr: string[] = [
       "Jan",
       "Feb",
@@ -17,10 +18,17 @@ function formatDate(myDate: Date | number): string {
     ];
   
     let date: Date;
-    if (typeof myDate === "number") date = new Date(myDate);
+    if (typeof myDate === "number" || typeof myDate === "string") date = new Date(myDate);
     else date = myDate;
 
     return `${monthStringArr[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
   };
 
-export { formatDate };
+function formatYYYYMMDD(myDate: string): string {
+  let date: Date = new Date(myDate);
+
+  return `${date.getUTCFullYear()}/${(date.getUTCMonth() + 1).toString().padStart(2, '0')}/${date.getUTCDate().toString().padStart(2, '0')}`;
+}
+
+export { formatDateMonthYear as formatDate };
+export {formatYYYYMMDD};

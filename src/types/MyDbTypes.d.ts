@@ -46,12 +46,19 @@ type ProjectType = {
     publishedDate: string;
     updatedDate: string;
     summary?: string;
+    body?: string;
+    currentFeatures?: string[];
+    anticipatedFeatures?: string[];
+    obstaclesEncountered?: string[];
     keywords?: string[];
+    languages?: string[];
     platform?: string;
     repoLink?: string;
     distributionLink?: string;
     demoLink?: string;
     didAtWorkId?: string;
+    status?: string;
+    putOnResume?: boolean;
     comments?: CommentType[];
 }
 
@@ -71,8 +78,8 @@ type WorkExperienceType = {
     startDate: string;
     endDate: string;
     shortDescription?: string;
-    responsibilities?: string;
-    accomplishments?: string;
+    responsibilities?: string[];
+    accomplishments?: string[];
 }
 
 type CommentType = {

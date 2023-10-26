@@ -7,11 +7,14 @@ import { SlidingDropDownProps } from "./ContainerTypes";
 const SlidingDropDown: React.FC<SlidingDropDownProps> = ({
   headerComponent,
   dropdownComponent,
+  dropdownStyle,
   isOpenOnDefault = false,
   changeOnClick = false,
+  openOnHover = false,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(isOpenOnDefault);
   const [height, setHeight] = useState<string>();
+  const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
   const dropdownContainerRef = useRef<HTMLDivElement>(null);
 
   const changeOpenState = () => {
@@ -34,16 +37,40 @@ const SlidingDropDown: React.FC<SlidingDropDownProps> = ({
   }, []);
 
   return (
-    <div className={Styles.container}>
+    <div
+      className={Styles.container}
+      onClick={
+        changeOnClick && !isOpen
+          ? () => {
+              setIsOpen(true);
+            }
+          : () => {}
+      }
+      onMouseEnter={() => {
+        setIsMouseOver(true);
+      }}
+      onMouseLeave={() => {
+        setIsMouseOver(false);
+      }}
+    >
       <div
         className={Styles.header}
-        onClick={changeOnClick ? changeOpenState : () => {}}
+        onClick={
+          changeOnClick && isOpen
+            ? () => {
+                setIsOpen(false);
+              }
+            : () => {}
+        }
       >
         {headerComponent}
       </div>
       <div
         className={Styles.dropdown}
-        style={{ maxHeight: isOpen ? height : "0px" }}
+        style={{
+          maxHeight: isOpen || (openOnHover && isMouseOver) ? height : "0px",
+          ...dropdownStyle,
+        }}
         ref={dropdownContainerRef}
       >
         {dropdownComponent}

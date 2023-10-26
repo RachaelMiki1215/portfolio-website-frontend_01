@@ -6,6 +6,7 @@ import {
   faCodepen,
   faTwitter,
   faInstagram,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,6 +44,12 @@ const socials = [
     name: "Twitter",
     url: "https://twitter.com/RachaelMiki1215",
     icon: <FontAwesomeIcon icon={faTwitter} />,
+    isInternal: false,
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/channel/UC2IpOSh_fvmYSqzHZ2ZR3Bw",
+    icon: <FontAwesomeIcon icon={faYoutube} />,
     isInternal: false,
   },
   {

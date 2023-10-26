@@ -12,6 +12,19 @@ export const metadata: Metadata = {
   description: "This website showcases projects done by Rachael Miki Buxton.",
 };
 
+const NoScriptDisplay: React.FC = () => {
+  return (
+    <noscript className={GlobalStyle.noscriptDisplay}>
+      <h4>Just a reminder...</h4>
+      <span>
+        Hey there, it seems JavaScript isn't enabled in your browser!
+        <br />
+        This site might not work properly unless JavaScript is enabled.
+      </span>
+    </noscript>
+  );
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -24,6 +37,7 @@ export default function RootLayout({
         <Navbar className={GlobalStyle.navbar} />
         <SocialsBar className={GlobalStyle.socialsbar} />
         <Content>{children}</Content>
+        <NoScriptDisplay />
         {/* TODO: Wait for using Framer Motion AnimatePresence until this issue (https://github.com/vercel/next.js/issues/49279#issuecomment-1541939624) is fixed */}
         {/* <AnimatePresence
           mode="wait"

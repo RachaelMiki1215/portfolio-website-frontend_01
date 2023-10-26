@@ -1,15 +1,17 @@
-.container, .header, .dropdown {
-    margin: 0;
-    padding: 0;
-    height: auto;
+.container,
+.header,
+.dropdown {
+  margin: 0;
+  padding: 0;
+  height: auto;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .dropdown {
-    overflow: hidden;
-    transition: max-height 0.5s ease;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
 }

@@ -11,7 +11,7 @@ import {
 import {
   getCertifications,
   getEducation,
-  getWorkExperience,
+  getWorkExperienceDynamic,
 } from "@/data/FetchFromMyDb";
 
 export const metadata: Metadata = {
@@ -97,7 +97,7 @@ export default async function TimelinePage() {
 
 const dataJson = async () => {
   let arr = new Array();
-  const workExperienceData: Array<any> = await getWorkExperience();
+  const workExperienceData: Array<any> = await getWorkExperienceDynamic();
   const educationData: Array<any> = await getEducation();
   const certificationData: Array<any> = await getCertifications();
 

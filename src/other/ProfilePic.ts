@@ -4,7 +4,7 @@ import profileImg03 from "@/../public/img/RachaelBuxton_ProfilePic_03.jpg";
 import { StaticImageData } from "next/image";
 import { CSSProperties } from "react";
 
-type profilePicType = {
+export type profilePicType = {
     image: string | StaticImageData;
     caption: string;
     style?: CSSProperties;

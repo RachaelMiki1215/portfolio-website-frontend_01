@@ -1,22 +1,27 @@
 import Styles from "./about.module.scss";
 
-import { profilePicArr } from "@/other/ProfilePic";
+import { profilePicArr, profilePicType } from "@/other/ProfilePic";
 import { Metadata } from "next";
 import TimeBasedGreeting from "@/components/strings/greetings";
 import { InlineLink } from "@/components/inline-elements/Links";
 import Carousel from "@/components/container/Carousel";
 import CaptionPopupImage from "@/components/images/CaptionPopupImage";
-import { getHobbies } from "@/data/FetchFromMyDb";
+import { getHobbiesDynamic } from "@/data/FetchFromMyDb";
+import { HoverText } from "@/components/inline-elements/HoverText";
 
-// TODO: Eventually, optimize this by first choosing random item out of array and then forming component
-const profPicArr: React.ReactNode[] = profilePicArr.map((prof) => (
-  <CaptionPopupImage
-    src={prof.image}
-    caption={prof.caption}
-    imgClassName={Styles.profileImg}
-    imgStyle={prof.style}
-  />
-));
+const ProfilePic: React.FC = () => {
+  const pic: profilePicType =
+    profilePicArr[Math.floor(Math.random() * profilePicArr.length)];
+
+  return (
+    <CaptionPopupImage
+      src={pic.image}
+      caption={pic.caption}
+      imgClassName={Styles.profileImg}
+      imgStyle={pic.style}
+    />
+  );
+};
 
 type Hobby = {
   name: string;
@@ -31,7 +36,15 @@ const HobbySection = ({ hobbies }: { hobbies: any }) => {
         <ul>
           {Array.isArray(hobbies) ? (
             hobbies.map((hobby: Hobby) => {
-              return <li key={Math.random().toString()}>{hobby.name}</li>;
+              return (
+                <li key={Math.random().toString()}>
+                  {/* <HoverText popupText={hobby.description}>
+                    {hobby.name}
+                  </HoverText> */}
+                  {/* TODO: Eventually use HoverText component for this once component code is fixed. */}
+                  {hobby.name}
+                </li>
+              );
             })
           ) : (
             <li key={Math.random().toString()}>{hobbies.name}</li>
@@ -48,7 +61,7 @@ export const metadata: Metadata = {
 };
 
 export default async function About() {
-  const hobbies = await getHobbies();
+  const hobbies = await getHobbiesDynamic();
 
   return (
     <main className={Styles.main}>
@@ -70,7 +83,7 @@ export default async function About() {
           </p>
         </div>
         <div className={Styles.moreInfo}>
-          <p>Some more info about me...</p>
+          <p>More info about me...</p>
           <dl>
             <dt>MBTI Type</dt>
             <dd>INTJ / ISTJ</dd>
@@ -92,7 +105,7 @@ export default async function About() {
         </div>
       </Carousel>
       <div className={Styles.imgDiv}>
-        {profPicArr[Math.floor(Math.random() * profPicArr.length)]}
+        <ProfilePic />
       </div>
     </main>
   );

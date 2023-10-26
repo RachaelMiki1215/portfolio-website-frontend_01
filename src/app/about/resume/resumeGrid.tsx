@@ -14,7 +14,7 @@ const ResumeGrid: React.FC<{ children?: React.ReactNode }> = ({
   return (
     <main
       className={Styles.main}
-      style={{ height: `${Math.max(contentArea.height - 10, 500)}px` }}
+      style={{ height: `${Math.max(contentArea.height + 100, 500)}px` }}
     >
       {children}
     </main>
