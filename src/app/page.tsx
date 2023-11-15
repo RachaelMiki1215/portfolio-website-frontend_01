@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import { majorMonoDisplayClass } from "@/components/next-fonts";
 
 import Styles from "./home.module.scss";
+import { motion } from "framer-motion";
+import PageWrapper from "@/components/container/PageWrapper";
 
 //TODO: Figure out website keywords later.
 export const metadata: Metadata = {
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
+    // <PageWrapper>
     <main className={`${majorMonoDisplayClass} ${Styles.main}`}>
       Hey There,
       <br />
@@ -20,5 +23,6 @@ export default function Home() {
       <br />
       Here.
     </main>
+    // </PageWrapper>
   );
 }
