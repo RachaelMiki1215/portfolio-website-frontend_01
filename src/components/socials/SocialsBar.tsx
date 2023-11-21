@@ -52,18 +52,21 @@ const socials = [
     icon: <FontAwesomeIcon icon={faYoutube} />,
     isInternal: false,
   },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/mikimonmon1215/",
-    icon: <FontAwesomeIcon icon={faInstagram} />,
-    isInternal: true,
-  },
-  {
-    name: "Email",
-    url: "/contact",
-    icon: <FontAwesomeIcon icon={faEnvelope} />,
-    isInternal: true,
-  },
+  // TODO: Uncomment as soon as I have more IG content.
+
+  // {
+  //   name: "Instagram",
+  //   url: "https://www.instagram.com/mikimonmon1215/",
+  //   icon: <FontAwesomeIcon icon={faInstagram} />,
+  //   isInternal: true,
+  // },
+  // TODO: Uncomment Email section as soon as pages are complete.
+  // {
+  //   name: "Email",
+  //   url: "/contact",
+  //   icon: <FontAwesomeIcon icon={faEnvelope} />,
+  //   isInternal: true,
+  // },
 ];
 
 interface SocialsBarProps {

@@ -6,8 +6,11 @@ import { ProjectType } from "@/types/MyDbTypes";
 import React from "react";
 import Layout_LeftContentDisplay from "./layout_client";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSuitcase } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectList: React.FC = async () => {
+  // TODO: I know you hate to do so, but you probably should think about pagination soon.
   const projects: ProjectType[] = await getProjectsDynamic();
 
   return (
@@ -18,8 +21,11 @@ const ProjectList: React.FC = async () => {
         )
         .map((project) => {
           return (
-            <li className={Styles.projectItem}>
-              <span className={Styles.projectTitle}>{project.title}</span>
+            <li className={Styles.projectItem} key={`project_${project.id}`}>
+              <span>
+                <span className={Styles.projectTitle}>{project.title}</span>
+                {project.didAtWorkId && <FontAwesomeIcon icon={faSuitcase} />}
+              </span>
               <span className={Styles.projectDate}>
                 {formatDate(project.publishedDate)}
               </span>
@@ -28,7 +34,7 @@ const ProjectList: React.FC = async () => {
                   {project.keywords.map((keyword) => {
                     return (
                       <li
-                        key={Math.random().toString()}
+                        key={`project_${project.id}_${keyword}`}
                         className={Styles.projectKeyword}
                       >
                         {keyword}

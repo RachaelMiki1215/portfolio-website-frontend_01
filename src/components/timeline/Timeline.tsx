@@ -70,7 +70,7 @@ const SubTimeline: React.FC<SubTimelineProps> = ({
       <div
         className={Styles.pointer}
         style={{
-          top: `calc(${endPosition + (startPosition - endPosition) / 2}%)`,
+          top: `${endPosition + (startPosition - endPosition) / 2}%`,
           // @ts-ignore
           ...(timelineEvent.props.startDate !== timelineEvent.props.endDate && {
             clip: "rect(0px 300px 10px 20px)",

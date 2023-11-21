@@ -1,10 +1,12 @@
 "use client";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Styles from "./Carousel.module.scss";
 import { CarouselProps } from "./ContainerTypes";
 
 import { useEffect, useState } from "react";
 import React from "react";
+import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 const Carousel: React.FC<CarouselProps> = ({
   containerClassName,
@@ -58,7 +60,7 @@ const Carousel: React.FC<CarouselProps> = ({
         }}
         disabled={currSlide < 1}
       >
-        &lt;
+        <FontAwesomeIcon icon={faCaretLeft} className={Styles.prevNextIcon} />
       </button>
       <button
         type="button"
@@ -70,7 +72,7 @@ const Carousel: React.FC<CarouselProps> = ({
         }}
         disabled={currSlide >= slideCount - 1}
       >
-        &gt;
+        <FontAwesomeIcon icon={faCaretRight} className={Styles.prevNextIcon} />
       </button>
     </div>
   );

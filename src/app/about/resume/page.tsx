@@ -247,6 +247,7 @@ const WorkExperienceSection: React.FC = async () => {
                               {work.responsibilities.map((resp: string) => (
                                 <li
                                   dangerouslySetInnerHTML={{ __html: resp }}
+                                  key={Math.random().toString()}
                                 />
                               ))}
                             </ul>
@@ -257,7 +258,10 @@ const WorkExperienceSection: React.FC = async () => {
                             <h5>Accomplishments</h5>
                             <ul>
                               {work.accomplishments.map((acc: string) => (
-                                <li dangerouslySetInnerHTML={{ __html: acc }} />
+                                <li
+                                  dangerouslySetInnerHTML={{ __html: acc }}
+                                  key={Math.random().toString()}
+                                />
                               ))}
                             </ul>
                           </>
@@ -303,13 +307,17 @@ const SkillSection: React.FC = async () => {
         {skillCategories.map((category: any) => {
           return (
             <SlidingDropDown
+              key={`skillcategory_${category.toString()}`}
               dropdownComponent={
                 <ul className={Styles.skillDropdownContent}>
                   {skills
                     .filter((skill: SkillType) => skill.category === category)
                     .sort(sortBySkillLevel)
                     .map((skill: SkillType) => (
-                      <li className={Styles.skillItem}>
+                      <li
+                        className={Styles.skillItem}
+                        key={`skill_${skill.name}`}
+                      >
                         <span
                           className={Styles.skillBar}
                           style={{

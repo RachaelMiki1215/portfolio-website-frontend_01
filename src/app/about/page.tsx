@@ -8,6 +8,7 @@ import Carousel from "@/components/container/Carousel";
 import CaptionPopupImage from "@/components/images/CaptionPopupImage";
 import { getHobbiesDynamic } from "@/data/FetchFromMyDb";
 import { HoverText } from "@/components/inline-elements/HoverText";
+import { HobbyType } from "@/types/MyDbTypes";
 
 const ProfilePic: React.FC = () => {
   const pic: profilePicType =
@@ -23,35 +24,75 @@ const ProfilePic: React.FC = () => {
   );
 };
 
-type Hobby = {
-  name: string;
-  description: string;
-};
-
-const HobbySection = ({ hobbies }: { hobbies: any }) => {
+const HobbySection = ({ hobbies }: { hobbies: HobbyType[] }) => {
   return (
     <>
       <dt>Hobbies</dt>
       <dd>
         <ul>
-          {Array.isArray(hobbies) ? (
-            hobbies.map((hobby: Hobby) => {
-              return (
-                <li key={Math.random().toString()}>
-                  {/* <HoverText popupText={hobby.description}>
+          {hobbies.map((hobby: HobbyType) => {
+            return (
+              <li key={Math.random().toString()}>
+                {/* <HoverText popupText={hobby.description}>
                     {hobby.name}
                   </HoverText> */}
-                  {/* TODO: Eventually use HoverText component for this once component code is fixed. */}
-                  {hobby.name}
-                </li>
-              );
-            })
-          ) : (
-            <li key={Math.random().toString()}>{hobbies.name}</li>
-          )}
+                {/* TODO: Eventually use HoverText component for this once component code is fixed. */}
+                {hobby.name}
+              </li>
+            );
+          })}
         </ul>
       </dd>
     </>
+  );
+};
+
+const IntroParagraphs = () => {
+  return (
+    <div className={Styles.intro}>
+      <p>
+        <TimeBasedGreeting />, this is <strong>Rachael Miki Buxton</strong>. I
+        am a System Engineer learning web development.
+      </p>
+      <p>
+        I have made this website to showcase my work. As I have a lot of
+        interests, I&apos;ll sometimes be posting about topics other than web
+        development, e.g. native application development or game development.
+      </p>
+      <p>
+        Thanks, and{" "}
+        <InlineLink href="/contact" isInternal={true}>
+          contact me
+        </InlineLink>{" "}
+        if you have any comments or questions!
+      </p>
+    </div>
+  );
+};
+
+const AdditionalInfo = ({ hobbies }: { hobbies: HobbyType[] }) => {
+  return (
+    <div className={Styles.moreInfo}>
+      <p>More info about me...</p>
+      <dl>
+        <dt>MBTI Type</dt>
+        <dd>INTJ / ISTJ</dd>
+        {hobbies && <HobbySection hobbies={hobbies} />}
+        <dt>Likes</dt>
+        <dd>
+          <ul>
+            <li>Dogs🐕</li>
+            <li>Boba Tea🥤</li>
+          </ul>
+        </dd>
+        <dt>Dislikes</dt>
+        <dd>
+          <ul>
+            <li>Long meetings⌚</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
   );
 };
 
@@ -66,43 +107,8 @@ export default async function About() {
   return (
     <main className={Styles.main}>
       <Carousel containerClassName={Styles.descriptionCarousel}>
-        <div className={Styles.intro}>
-          <p>
-            <TimeBasedGreeting />, this is <strong>Rachael Miki Buxton</strong>.
-            I am a System Engineer learning web development.
-          </p>
-          <p>
-            I have made this website to showcase my work. As I have a lot of
-            interests, I&apos;ll sometimes be posting about topics other than
-            web development, e.g. native application development or game
-            development.
-          </p>
-          <p>
-            Thanks, and <InlineLink href="/contact">contact me</InlineLink> if
-            you have any comments or questions!
-          </p>
-        </div>
-        <div className={Styles.moreInfo}>
-          <p>More info about me...</p>
-          <dl>
-            <dt>MBTI Type</dt>
-            <dd>INTJ / ISTJ</dd>
-            {hobbies && <HobbySection hobbies={hobbies} />}
-            <dt>Likes</dt>
-            <dd>
-              <ul>
-                <li>Dogs🐕</li>
-                <li>Boba Tea🥤</li>
-              </ul>
-            </dd>
-            <dt>Dislikes</dt>
-            <dd>
-              <ul>
-                <li>Long meetings⌚</li>
-              </ul>
-            </dd>
-          </dl>
-        </div>
+        <IntroParagraphs />
+        <AdditionalInfo hobbies={hobbies} />
       </Carousel>
       <div className={Styles.imgDiv}>
         <ProfilePic />

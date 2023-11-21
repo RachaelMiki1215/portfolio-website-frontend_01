@@ -10,15 +10,17 @@ import { useEffect, useRef, useState } from "react";
 
 import Styles from "./Navbar.module.scss";
 
+// TODO: Uncomment Blog & Contact section as soon as pages are complete.
 const sections: section[] = [
   {
     label: "Portfolio",
     href: "/portfolio",
   },
-  {
-    label: "Blog",
-    href: "/blog",
-  },
+  // TODO: Uncomment Blog section as soon as there's some blog content.
+  // {
+  //   label: "Blog",
+  //   href: "/blog",
+  // },
   {
     label: "About",
     href: "/about",
@@ -33,28 +35,31 @@ const sections: section[] = [
       },
     ],
   },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-  {
-    label: "Other",
-    href: "/other",
-    children: [
-      {
-        label: "Tools",
-        href: "/other/tools",
-      },
-      {
-        label: "Links",
-        href: "/other/links",
-      },
-      {
-        label: "Attributes",
-        href: "/other/attributes",
-      },
-    ],
-  },
+  // TODO: Uncomment contact page as soon as a contact form is made.
+  // {
+  //   label: "Contact",
+  //   href: "/contact",
+  // },
+  // TODO: Uncomment Others section as soon as there is some additional content to add.
+
+  // {
+  //   label: "Others",
+  //   href: "/other",
+  //   children: [
+  //     {
+  //       label: "Tools",
+  //       href: "/other/tools",
+  //     },
+  //     {
+  //       label: "Links",
+  //       href: "/other/links",
+  //     },
+  //     {
+  //       label: "Attributes",
+  //       href: "/other/attributes",
+  //     },
+  //   ],
+  // },
 ];
 
 export default function Navbar({ className }: { className?: string }) {

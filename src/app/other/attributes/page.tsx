@@ -1,7 +1,7 @@
 // TODO: Complete this page
 
-export default function Attributes() {
-    return (
-        <></>
-    );
+import UnderConstructionComponent from "@/components/errors/UnderConstruction";
+
+export default function Other() {
+  return <UnderConstructionComponent />;
 }

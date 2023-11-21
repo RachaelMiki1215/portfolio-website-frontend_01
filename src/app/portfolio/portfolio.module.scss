@@ -12,6 +12,10 @@
     padding: 5px 10px;
     border-radius: 5px;
   }
+
+  .workProjectIndicator {
+    background: rgba($color: #974e4e, $alpha: 0.5);
+  }
 }
 
 .languageList {
@@ -47,6 +51,7 @@
     }
 
     .projectTitle {
+      margin-right: 5px;
     }
     .projectDate {
       font-size: 0.8rem;

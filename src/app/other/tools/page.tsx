@@ -1,5 +1,7 @@
 // TODO: Complete this page
 
-export default function Tools() {
-  return <></>;
+import UnderConstructionComponent from "@/components/errors/UnderConstruction";
+
+export default function Other() {
+  return <UnderConstructionComponent />;
 }

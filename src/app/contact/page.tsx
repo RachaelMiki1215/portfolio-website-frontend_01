@@ -1,7 +1,7 @@
 // TODO: Complete this page
 
+import UnderConstructionComponent from "@/components/errors/UnderConstruction";
+
 export default function Contact() {
-    return (
-        <></>
-    );
+  return <UnderConstructionComponent item="This contact page" />;
 }

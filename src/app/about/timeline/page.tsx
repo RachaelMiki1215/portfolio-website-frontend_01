@@ -49,6 +49,7 @@ export default async function TimelinePage() {
                       return (
                         <li
                           dangerouslySetInnerHTML={{ __html: responsibility }}
+                          key={Math.random().toString()}
                         ></li>
                       );
                     })}
