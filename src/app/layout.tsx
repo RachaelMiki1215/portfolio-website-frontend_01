@@ -7,7 +7,6 @@ import SocialsBar from "@/components/socials/SocialsBar";
 import { Metadata } from "next";
 import Content from "@/components/container/Content";
 import NoScriptDisplay from "@/components/noscript/NoScriptDisplay";
-import { AnimatePresence } from "framer-motion";
 
 export const metadata: Metadata = {
   title: "Rachael Miki Buxton | Portfolio Website",

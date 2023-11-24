@@ -1,6 +1,5 @@
 // TODO: Complete this page
 
-import { profilePicArr } from "@/other/ProfilePic";
 import Container from "@/components/container/Container";
 import Styles from "./Resume.module.scss";
 import ResumeGrid from "./resumeGrid";
@@ -13,19 +12,11 @@ import {
   getWorkExperienceDynamic,
   getProjectsDynamic,
 } from "@/data/FetchFromMyDb";
-import Image from "next/image";
 import SlidingDropDown from "@/components/container/DropDown";
-import {
-  CertificationType,
-  EducationType,
-  HobbyType,
-  SkillType,
-} from "@/types/MyDbTypes";
+import { EducationType, HobbyType, SkillType } from "@/types/MyDbTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarker, faUniversity } from "@fortawesome/free-solid-svg-icons";
 import { formatDate } from "@/functions/DateFunctions";
-import { type } from "os";
-import { promises } from "dns";
 import React from "react";
 
 const sortBySkillLevel = (a: SkillType, b: SkillType): number => {

@@ -7,7 +7,6 @@ import { InlineLink } from "@/components/inline-elements/Links";
 import Carousel from "@/components/container/Carousel";
 import CaptionPopupImage from "@/components/images/CaptionPopupImage";
 import { getHobbiesDynamic } from "@/data/FetchFromMyDb";
-import { HoverText } from "@/components/inline-elements/HoverText";
 import { HobbyType } from "@/types/MyDbTypes";
 
 const ProfilePic: React.FC = () => {

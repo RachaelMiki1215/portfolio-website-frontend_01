@@ -6,7 +6,7 @@ import { ProjectType } from "@/types/MyDbTypes";
 import { formatYYYYMMDD } from "@/functions/DateFunctions";
 import { InlineLink } from "@/components/inline-elements/Links";
 import { notFound } from "next/navigation";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 const KeywordsSection = ({ project }: { project: ProjectType }) => {
   return (
