@@ -16,3 +16,17 @@
   left: 20px;
   bottom: 20px;
 }
+
+@media (max-width: 600px) {
+  .socialsbar {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+  }
+
+  .navbar {
+    top: 25px;
+    right: 50px;
+    transform: none;
+  }
+}
