@@ -56,3 +56,32 @@
 .subnavlink {
   font-size: 1.1rem;
 }
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .container {
+    align-items: center;
+  }
+
+  .navlink {
+    font-size: 1.3rem;
+  }
+
+  .subnavlink {
+    font-size: 1.1rem;
+  }
+
+  .navlink, .subnavlink {
+    &:hover,
+    &:active,
+    &.activeLink {
+    color: whitesmoke;
+    opacity: 1;
+    letter-spacing: -0.2rem;
+  }
+  }
+}
