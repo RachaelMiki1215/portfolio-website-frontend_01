@@ -23,3 +23,9 @@
         height: 25px;
     }
 }
+
+@media (max-width: 600px) {
+    .socialsList {
+        flex-direction: row;
+    }
+}
