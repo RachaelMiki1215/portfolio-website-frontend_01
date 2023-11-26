@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import Style from "./Content.module.scss";
 import ContentContext from "@/context/ContentContext";
 import { ContentAreaProps } from "@/types/ContentArea";
