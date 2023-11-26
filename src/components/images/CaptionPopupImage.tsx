@@ -2,7 +2,7 @@
 
 import { CSSProperties, useState } from "react";
 import Styles from "./CaptionPopupImage.module.scss";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type CaptionPopupImageProps = {
   src: string | StaticImageData;
@@ -26,7 +26,7 @@ const CaptionPopupImage: React.FC<CaptionPopupImageProps> = ({
 
   return (
     <>
-      <img
+      <Image
         src={typeof src === "string" ? src : src.src}
         alt={caption}
         onMouseEnter={() => {
