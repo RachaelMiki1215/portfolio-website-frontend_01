@@ -10,6 +10,8 @@ import { useEffect, useRef, useState } from "react";
 
 import Styles from "./Navbar.module.scss";
 
+// TODO: Create specific style for when screen width is >=600px.
+
 // TODO: Uncomment Blog & Contact section as soon as pages are complete.
 const sections: section[] = [
   {
