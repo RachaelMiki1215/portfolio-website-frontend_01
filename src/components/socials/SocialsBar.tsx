@@ -4,11 +4,11 @@ import {
   faLinkedin,
   faGithub,
   faCodepen,
-  faInstagram,
+  // faInstagram,
   faYoutube,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+// import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CodesandboxLogo } from "@phosphor-icons/react";
 import Link from "next/link";
