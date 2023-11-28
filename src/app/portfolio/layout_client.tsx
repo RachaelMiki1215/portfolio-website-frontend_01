@@ -30,7 +30,7 @@ const Layout_Client: React.FC<Layout_LeftContentDisplayType> = ({
         }`,
       }}
     >
-      {!onPortfolioTop && windowSize.width > 900 && leftContent}
+      {(windowSize.width > 900 || onPortfolioTop) && leftContent}
       {rightContent}
     </div>
   );
