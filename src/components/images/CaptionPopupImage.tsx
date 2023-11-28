@@ -29,6 +29,8 @@ const CaptionPopupImage: React.FC<CaptionPopupImageProps> = ({
       <Image
         src={typeof src === "string" ? src : src.src}
         alt={caption}
+        width={300}
+        height={300}
         onMouseEnter={() => {
           setIsCaptionVisible(true);
         }}
