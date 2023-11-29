@@ -28,4 +28,4 @@ const useWindowSize = (): { width: number; height: number } => {
   return windowSize;
 };
 
-export { useWindowSize as usewindowSize };
+export { useWindowSize };
