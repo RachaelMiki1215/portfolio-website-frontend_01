@@ -4,14 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Styles from "./Carousel.module.scss";
 import { CarouselProps } from "./ContainerTypes";
 
-import { useEffect, useState } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+
+// TODO: Create vertical orientation
+enum Orientation {
+  Horizontal = 0,
+  Vertical = 1,
+}
 
 const Carousel: React.FC<CarouselProps> = ({
   containerClassName,
   pageContainerClassName,
   navigatorClassName,
+  orientation = Orientation.Horizontal,
   children,
 }) => {
   const [currSlide, setCurrSlide] = useState<number>(0);
@@ -28,7 +34,11 @@ const Carousel: React.FC<CarouselProps> = ({
           return (
             <div
               className={Styles.page}
-              style={{ transform: `translateX(${(index - currSlide) * 100}%)` }}
+              style={
+                orientation === Orientation.Horizontal
+                  ? { transform: `translateX(${(index - currSlide) * 100}%)` }
+                  : { transform: `translateY(${(index - currSlide) * 100}%)` }
+              }
             >
               {child}
             </div>

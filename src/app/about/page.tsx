@@ -9,20 +9,6 @@ import CaptionPopupImage from "@/components/images/CaptionPopupImage";
 import { getHobbiesDynamic } from "@/data/FetchFromMyDb";
 import { HobbyType } from "@/types/MyDbTypes";
 
-const ProfilePic: React.FC = () => {
-  const pic: profilePicType =
-    profilePicArr[Math.floor(Math.random() * profilePicArr.length)];
-
-  return (
-    <CaptionPopupImage
-      src={pic.image}
-      caption={pic.caption}
-      imgClassName={Styles.profileImg}
-      imgStyle={pic.style}
-    />
-  );
-};
-
 const HobbySection = ({ hobbies }: { hobbies: HobbyType[] }) => {
   return (
     <>
@@ -46,7 +32,7 @@ const HobbySection = ({ hobbies }: { hobbies: HobbyType[] }) => {
   );
 };
 
-const IntroParagraphs = () => {
+const IntroParagraphs: React.FC = () => {
   return (
     <div className={Styles.intro}>
       <p>
@@ -69,7 +55,11 @@ const IntroParagraphs = () => {
   );
 };
 
-const AdditionalInfo = ({ hobbies }: { hobbies: HobbyType[] }) => {
+const AdditionalInfo: React.FC<{ hobbies: HobbyType[] }> = ({
+  hobbies,
+}: {
+  hobbies: HobbyType[];
+}) => {
   return (
     <div className={Styles.moreInfo}>
       <p>More info about me...</p>
@@ -95,6 +85,22 @@ const AdditionalInfo = ({ hobbies }: { hobbies: HobbyType[] }) => {
   );
 };
 
+const ProfilePic: React.FC = () => {
+  const pic: profilePicType =
+    profilePicArr[Math.floor(Math.random() * profilePicArr.length)];
+
+  return (
+    <div className={Styles.imgDiv}>
+      <CaptionPopupImage
+        src={pic.image}
+        caption={pic.caption}
+        imgClassName={Styles.profileImg}
+        imgStyle={pic.style}
+      />
+    </div>
+  );
+};
+
 export const metadata: Metadata = {
   title: "Rachael Miki Buxton | Portfolio Website | About Author",
   description: "A quick summary about the author/owner of this website.",
@@ -109,9 +115,8 @@ export default async function About() {
         <IntroParagraphs />
         <AdditionalInfo hobbies={hobbies} />
       </Carousel>
-      <div className={Styles.imgDiv}>
-        <ProfilePic />
-      </div>
+      {/* TODO: Revise carousel to make height adaptive to contents inside */}
+      <ProfilePic />
     </main>
   );
 }

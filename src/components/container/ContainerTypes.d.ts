@@ -2,6 +2,7 @@ export interface CarouselProps {
   containerClassName?: string;
   pageContainerClassName?: string;
   navigatorClassName?: string;
+  orientation?: Orientation;
   children: React.ReactNode;
 }
 
