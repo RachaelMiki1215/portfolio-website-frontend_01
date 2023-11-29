@@ -45,6 +45,11 @@
     border-radius: 10px;
     overflow: hidden;
     min-height: 80px;
+    transition: background 0.5s ease;
+
+    &.isSelected, &:hover {
+      background: rgba($color: whitesmoke, $alpha: 0.1);;
+    }
 
     .projectKeywords > .projectKeyword {
       font-size: 0.6rem;
