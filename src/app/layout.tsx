@@ -21,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div className={GlobalStyle.headerBackdrop}></div>
+        <div className={GlobalStyle.socialsbarBackdrop}></div>
         <MyHeader className={GlobalStyle.header} />
         <Navbar className={GlobalStyle.navbar} />
         <SocialsBar className={GlobalStyle.socialsbar} />

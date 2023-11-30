@@ -17,11 +17,36 @@
   bottom: 20px;
 }
 
+.socialsbarBackdrop, .headerBackdrop {
+  position: fixed;
+  z-index: 500;
+    // TODO: The 2 lines below is just LOUSY and needs to be corrected sometime.
+  left: -50px;
+  width: 300%;
+  pointer-events: none;
+  user-select: none;
+}
+.socialsbarBackdrop {
+  display: none;
+  bottom: 0;
+  height: 60px;
+  background: linear-gradient(transparent, #002f41 50%, #002f41);
+}
+.headerBackdrop {
+  top: 0;
+  height: 70px;
+  background: linear-gradient(#1f1f1f, #1f1f1f 50%, transparent);
+}
+
 @media (max-width: 600px) {
   .socialsbar {
     left: 50%;
     transform: translateX(-50%);
     bottom: 10px;
+  }
+
+  .socialsbarBackdrop {
+    display: block;
   }
 
   .navbar {
