@@ -9,7 +9,11 @@ import CaptionPopupImage from "@/components/images/CaptionPopupImage";
 import { getHobbiesDynamic } from "@/data/FetchFromMyDb";
 import { HobbyType } from "@/types/MyDbTypes";
 
-const HobbySection = ({ hobbies }: { hobbies: HobbyType[] }) => {
+const HobbySection: React.FC<{ hobbies: HobbyType[] }> = ({
+  hobbies,
+}: {
+  hobbies: HobbyType[];
+}) => {
   return (
     <>
       <dt>Hobbies</dt>
@@ -37,12 +41,13 @@ const IntroParagraphs: React.FC = () => {
     <div className={Styles.intro}>
       <p>
         <TimeBasedGreeting />, this is <strong>Rachael Miki Buxton</strong>. I
-        am a System Engineer learning web development.
+        am a System Engineer learning <strong>web development</strong>.
       </p>
       <p>
-        I have made this website to showcase my work. As I have a lot of
-        interests, I&apos;ll sometimes be posting about topics other than web
-        development, e.g. native application development or game development.
+        I&apos;ve created this website to showcase my work. As I&apos;m
+        scatter-brained, I&apos;ll sometimes be posting about topics other than
+        web development (e.g. native application development or game
+        development).
       </p>
       <p>
         Thanks, and{" "}

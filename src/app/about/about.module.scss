@@ -62,19 +62,18 @@
 
 @media (max-width: 900px) {
   .main {
-    grid-template-rows: auto auto;
+    grid-template-rows: auto;
     grid-template-columns: auto;
     height: auto;
     width: 100%;
   }
 
   .descriptionCarousel {
-    grid-row: 2;
+    grid-row: 1;
     grid-column: 1;
   }
 
   .imgDiv {
-    grid-row: 1;
-    grid-column: 1;
+    display: none;
   }
 }
