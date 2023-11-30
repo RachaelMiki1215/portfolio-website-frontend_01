@@ -295,44 +295,46 @@ const SkillSection: React.FC = async () => {
     return (
       <Container className={Styles.skillSection}>
         <h1>Skills</h1>
-        {skillCategories.map((category: any) => {
-          return (
-            <SlidingDropDown
-              key={`skillcategory_${category.toString()}`}
-              dropdownComponent={
-                <ul className={Styles.skillDropdownContent}>
-                  {skills
-                    .filter((skill: SkillType) => skill.category === category)
-                    .sort(sortBySkillLevel)
-                    .map((skill: SkillType) => (
-                      <li
-                        className={Styles.skillItem}
-                        key={`skill_${skill.name}`}
-                      >
-                        <span
-                          className={Styles.skillBar}
-                          style={{
-                            width: `${(skill.proficiency / 5) * 100}%`,
-                            opacity: `${skill.proficiency / 10}`,
-                          }}
-                        ></span>
-                        <span className={Styles.skillText}>{skill.name}</span>
-                        <span className={Styles.skillLevelText}>
-                          {getSkillLevelText(skill)}
-                        </span>
-                      </li>
-                    ))}
-                </ul>
-              }
-              headerComponent={
-                <div className={Styles.skillCategoryHeader}>{category}</div>
-              }
-              isOpenOnDefault={false}
-              changeOnClick={true}
-              openOnHover={true}
-            />
-          );
-        })}
+        <div className={Styles.skillSectionContent}>
+          {skillCategories.map((category: any) => {
+            return (
+              <SlidingDropDown
+                key={`skillcategory_${category.toString()}`}
+                dropdownComponent={
+                  <ul className={Styles.skillDropdownContent}>
+                    {skills
+                      .filter((skill: SkillType) => skill.category === category)
+                      .sort(sortBySkillLevel)
+                      .map((skill: SkillType) => (
+                        <li
+                          className={Styles.skillItem}
+                          key={`skill_${skill.name}`}
+                        >
+                          <span
+                            className={Styles.skillBar}
+                            style={{
+                              width: `${(skill.proficiency / 5) * 100}%`,
+                              opacity: `${skill.proficiency / 10}`,
+                            }}
+                          ></span>
+                          <span className={Styles.skillText}>{skill.name}</span>
+                          <span className={Styles.skillLevelText}>
+                            {getSkillLevelText(skill)}
+                          </span>
+                        </li>
+                      ))}
+                  </ul>
+                }
+                headerComponent={
+                  <div className={Styles.skillCategoryHeader}>{category}</div>
+                }
+                isOpenOnDefault={false}
+                changeOnClick={true}
+                openOnHover={true}
+              />
+            );
+          })}
+        </div>
       </Container>
     );
   }
