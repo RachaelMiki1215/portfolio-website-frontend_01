@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSuitcase } from "@fortawesome/free-solid-svg-icons";
 import { formatDate } from "@/functions/DateFunctions";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ProjectList: React.FC<{ projects: ProjectType[]; currPath: string }> = ({
   projects,
@@ -25,7 +25,11 @@ const ProjectList: React.FC<{ projects: ProjectType[]; currPath: string }> = ({
   }, [currPath]);
 
   return (
-    <ul className={Style.projectList}>
+    <ul
+      className={`${Style.projectList} ${
+        currProjectId !== "portfolio" && Style.isProjectDetailsShown
+      }`}
+    >
       {projects
         .sort(
           (a, b) => Date.parse(b.publishedDate) - Date.parse(a.publishedDate)
@@ -85,20 +89,31 @@ const Layout_Client: React.FC<Layout_LeftContentDisplayType> = ({
 
   const windowSize = useWindowSize();
 
+  const projectDetailsContainerRef = useRef<HTMLDivElement>();
+
+  const [isProjectDetailsTall, setIsProjectDetailsTall] =
+    useState<boolean>(false);
+
+  useEffect(() => {
+    if (projectDetailsContainerRef.current.clientHeight > 820) {
+      setIsProjectDetailsTall(true);
+    } else setIsProjectDetailsTall(false);
+  }, [windowSize]);
+
   return (
-    <div
-      className={Style.layoutClientContainer}
-      style={{
-        gridTemplateColumns: `1fr${
-          !onPortfolioTop && windowSize.width > 900 ? " 1fr" : ""
-        }`,
-      }}
-    >
+    <>
       {(windowSize.width > 900 || onPortfolioTop) && (
         <ProjectList projects={projects} currPath={pathname} />
       )}
-      {rightContent}
-    </div>
+      <div
+        className={`${Style.projectDetailsContainer} ${
+          isProjectDetailsTall && Style.isProjectDetailsTall
+        }`}
+        ref={projectDetailsContainerRef}
+      >
+        {rightContent}
+      </div>
+    </>
   );
 };
 
