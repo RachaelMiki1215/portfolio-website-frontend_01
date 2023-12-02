@@ -2,7 +2,7 @@
 
 import { section, child } from "./types";
 
-import { majorMonoDisplayClass } from "../next-fonts";
+import { majorMonoDisplay } from "../next-fonts";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -66,7 +66,9 @@ const sections: section[] = [
 
 export default function Navbar({ className }: { className?: string }) {
   return (
-    <nav className={`${majorMonoDisplayClass} ${Styles.navbar} ${className}`}>
+    <nav
+      className={`${majorMonoDisplay.className} ${Styles.navbar} ${className}`}
+    >
       {sections.map((section) => {
         return <NavSection section={section} key={Math.random().toString()} />;
       })}

@@ -7,6 +7,11 @@ import SocialsBar from "@/components/socials/SocialsBar";
 import { Metadata } from "next";
 import Content from "@/components/container/Content";
 import NoScriptDisplay from "@/components/noscript/NoScriptDisplay";
+import {
+  jetbrainsMonoBold,
+  jetbrainsMonoNormal,
+  majorMonoDisplay,
+} from "@/components/next-fonts";
 
 export const metadata: Metadata = {
   title: "Rachael Miki Buxton | Portfolio Website",
@@ -19,7 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${majorMonoDisplay.variable} ${jetbrainsMonoNormal.variable} ${jetbrainsMonoBold.variable}`}
+    >
       <body>
         <div className={GlobalStyle.headerBackdrop}></div>
         <div className={GlobalStyle.socialsbarBackdrop}></div>
