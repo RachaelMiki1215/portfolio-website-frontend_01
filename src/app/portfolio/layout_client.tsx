@@ -11,6 +11,7 @@ import { faSuitcase } from "@fortawesome/free-solid-svg-icons";
 import { formatDate } from "@/functions/DateFunctions";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
+import LanguageIcon from "@/components/icons/LanguageIcons";
 
 const ProjectList: React.FC<{ projects: ProjectType[]; currPath: string }> = ({
   projects,
@@ -49,7 +50,7 @@ const ProjectList: React.FC<{ projects: ProjectType[]; currPath: string }> = ({
               <span className={Style.projectDate}>
                 {formatDate(project.publishedDate)}
               </span>
-              {project.keywords.length > 0 && (
+              {/* {project.keywords.length > 0 && (
                 <ul className={Style.projectKeywords}>
                   {project.keywords.map((keyword) => {
                     return (
@@ -62,7 +63,16 @@ const ProjectList: React.FC<{ projects: ProjectType[]; currPath: string }> = ({
                     );
                   })}
                 </ul>
-              )}
+              )} */}
+              <ul className={Style.languageList}>
+                {project.languages.map((lang) => {
+                  return (
+                    <li key={Math.random().toString()}>
+                      <LanguageIcon name={lang.toLowerCase()} />
+                    </li>
+                  );
+                })}
+              </ul>
               <Link
                 href={`/portfolio/${project.id}`}
                 className={Style.projectButton}
