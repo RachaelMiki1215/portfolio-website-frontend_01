@@ -14,6 +14,7 @@ import {
   SiPowerautomate,
   SiBlazor,
 } from "react-icons/si";
+import { RiGatsbyFill } from "react-icons/ri";
 import { FaSass } from "react-icons/fa";
 
 import Styles from "./LanguageIcons.module.scss";
@@ -139,6 +140,11 @@ const iconDict = [
     icon: (
       <FaSass className={Styles.languageIcon} style={{ color: "#cf6b9d" }} />
     ),
+  },
+  {
+    name: ["gatsby"],
+    caption: "Gatsby",
+    icon: <RiGatsbyFill />,
   },
 ];
 
