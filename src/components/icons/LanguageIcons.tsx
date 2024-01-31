@@ -144,7 +144,12 @@ const iconDict = [
   {
     name: ["gatsby"],
     caption: "Gatsby",
-    icon: <RiGatsbyFill />,
+    icon: (
+      <RiGatsbyFill
+        className={Styles.languageIcon}
+        style={{ color: "#542c85" }}
+      />
+    ),
   },
 ];
 
