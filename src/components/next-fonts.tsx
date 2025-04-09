@@ -11,10 +11,12 @@ export const jetbrainsMonoNormal: NextFontWithVariable = JetBrains_Mono({
   subsets: ["latin"],
   weight: "100",
   variable: "--font-jetbrains-mono-normal",
+  display: "swap"
 });
 
 export const jetbrainsMonoBold: NextFontWithVariable = JetBrains_Mono({
   subsets: ["latin"],
   weight: "600",
   variable: "--font-jetbrains-mono-bold",
+  display: "swap"
 });
