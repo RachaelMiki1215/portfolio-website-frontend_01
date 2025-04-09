@@ -5,6 +5,7 @@ export const majorMonoDisplay: NextFontWithVariable = Major_Mono_Display({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-major-mono-display",
+  display: "swap"
 });
 
 export const jetbrainsMonoNormal: NextFontWithVariable = JetBrains_Mono({
